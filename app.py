@@ -36,12 +36,11 @@ def escolhe_opcao():
     
     def cadastrar_roupas():
         exibir_subtitulo("Cadastrar Roupa")
-        marca = input("Digite o nome da marca que deseja cadastrar: ")
-        categoria = input("Digite a categoria da roupa: ")
-        ativo = input("A roupa está ativa? (s/n): ").strip().lower() == "s"
-        roupa = {"Marca": marca, "categoria": categoria, "ativo": ativo}
-        Roupas.append(roupa)
-        print(f"A roupa {marca} foi cadastrada com sucesso.\n")
+
+        marca_roupas = input ("digite a marca da roupa que deseja cadastrar")
+        categoria_roupas = input ("digite a categoria que deseja cadastrar")
+        dados_da_roupa = {"Marca": marca_roupas, "categoria": categoria_roupas, "ativo": True}
+        Roupas.append(dados_da_roupa)
         retorna_menu()
     
     def listar_roupas():
