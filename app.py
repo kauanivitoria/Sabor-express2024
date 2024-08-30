@@ -24,7 +24,6 @@ def mostra_escolhas():
     print("4. Sair")
 
 def escolhe_opcao():
-    
     def exibir_subtitulo(texto):
         os.system("cls" if os.name == "nt" else "clear")
         print(texto)
@@ -37,8 +36,8 @@ def escolhe_opcao():
     def cadastrar_roupas():
         exibir_subtitulo("Cadastrar Roupa")
 
-        marca_roupas = input ("digite a marca da roupa que deseja cadastrar")
-        categoria_roupas = input ("digite a categoria que deseja cadastrar")
+        marca_roupas = input("Digite a marca da roupa que deseja cadastrar: ")
+        categoria_roupas = input("Digite a categoria que deseja cadastrar: ")
         dados_da_roupa = {"Marca": marca_roupas, "categoria": categoria_roupas, "ativo": True}
         Roupas.append(dados_da_roupa)
         retorna_menu()
@@ -57,7 +56,17 @@ def escolhe_opcao():
     
     def ativar_estoque():
         exibir_subtitulo("Ativar Estoque")
-        print("Você escolheu Ativar Estoque")
+        marca_roupas = input("Digite o nome da marca que deseja ativar: ")
+        marca_encontrada = False
+
+        for roupa in Roupas:
+            if roupa["Marca"] == marca_roupas:
+                marca_encontrada = True
+                roupa["ativo"] = not cliente ["ativo"]
+                mensagem = f"o cadastro do {Roupas} foi ativado/desativado com sucesso" if
+
+        if not marca_encontrada:
+            print(f"Marca {marca_roupas} não encontrada.")
         retorna_menu()
     
     def finalizar_programa():
@@ -95,5 +104,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
